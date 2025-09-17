@@ -1,2 +1,4 @@
 data/
 environment/
+output/
+__pycache__/

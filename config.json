@@ -1,0 +1,5 @@
+{
+  "data_path": "/home/sead/projects/vessel_seg/data/vessmap/images/",
+  "mask_path": "/home/sead/projects/vessel_seg/data/vessmap/annotator1/labels/",
+  "output_path": "/home/sead/projects/vessel_seg/output/"
+}
