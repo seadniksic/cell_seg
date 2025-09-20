@@ -12,7 +12,8 @@ class VSDataset(Dataset):
     def __init__(self, image_path, label_path, transform=None, label_transform=None):
         self.image_path = image_path
 
-        self.img_names = os.listdir(image_path)[:-5]
+        self.img_names = [d[:-4] for d in os.listdir(image_path)]
+        print(self.img_names)
         self.label_path = label_path
 
         self.transform = transform
@@ -20,11 +21,11 @@ class VSDataset(Dataset):
 
     def __getitem__(self, idx):
 
-        image = torch.from_numpy(pyvips.Image.new_from_file(os.path.join(self.image_path, self.img_names[idx])).numpy(dtype=np.float32))
-        image = torch.unsqueeze(image, 0)
-        mask = np.array(cv2.imread(f"{os.path.join(self.label_path, self.img_names[idx][:-5])}.png", cv2.IMREAD_GRAYSCALE), dtype=np.int64)
-        mask[mask > 0] = 1
-        mask = torch.from_numpy(mask)
+        # image = torch.from_numpy(pyvips.Image.new_from_file(os.path.join(self.image_path, self.img_names[idx])).numpy(dtype=np.float32))
+        # image = torch.unsqueeze(image, 0)
+        # mask = np.array(cv2.imread(f"{os.path.join(self.label_path, self.img_names[idx][:-5])}.png", cv2.IMREAD_GRAYSCALE), dtype=np.int64)
+        # mask[mask > 0] = 1
+        # mask = torch.from_numpy(mask)
 
         if self.transform:
             image=self.transform(image)

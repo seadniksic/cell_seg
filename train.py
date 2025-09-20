@@ -33,15 +33,15 @@ def main(cfg):
     epochs = 100
     weight_decay = .0001
 
-    loss_function = CrossEntropyLoss()
-    optim = torch.optim.Adam
-    optim_params = {"lr": lr, "weight_decay": weight_decay}
-    scheduler = torch.optim.lr_scheduler.StepLR
-    sched_params={"step_size": 30}
-    framework = SupervisedMLFramework(model, "UNet", output_path, train_dataset)
-    framework.train(epochs, loss_function, optim, optim_params, sched=scheduler,
-                    sched_params=sched_params, batch_size=16, weight_save_period=5,
-                    patience=20, validation_percent=20)
+    # loss_function = CrossEntropyLoss()
+    # optim = torch.optim.Adam
+    # optim_params = {"lr": lr, "weight_decay": weight_decay}
+    # scheduler = torch.optim.lr_scheduler.StepLR
+    # sched_params={"step_size": 30}
+    # framework = SupervisedMLFramework(model, "UNet", output_path, train_dataset)
+    # framework.train(epochs, loss_function, optim, optim_params, sched=scheduler,
+    #                 sched_params=sched_params, batch_size=16, weight_save_period=5,
+    #                 patience=20, validation_percent=20)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
