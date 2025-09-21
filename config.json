@@ -1,5 +1,5 @@
 {
-  "data_path": "/home/sead/projects/vessel_seg/data/vessmap/images/",
-  "mask_path": "/home/sead/projects/vessel_seg/data/vessmap/annotator1/labels/",
-  "output_path": "/home/sead/projects/vessel_seg/output/"
+  "data_path": "/home/sead/projects/cell_seg/data/train/images/",
+  "mask_path": "/home/sead/projects/cell_seg/data/train/masks/",
+  "output_path": "/home/sead/projects/cell_seg/output/"
 }
